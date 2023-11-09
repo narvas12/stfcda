@@ -1,0 +1,43 @@
+.about img {
+  width: 100%;
+}
+
+.about_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* .mission_container .left img {
+  width: 50%;
+  
+} */
+
+.left{
+ flex: 1 1 400px;
+}
+
+@media screen and (max-width: 1000px) {
+  .about_container{
+    display: flex;
+    align-items: center;
+  }
+
+
+  .mission_container{
+    display: flex;
+    align-items: center;
+    align-items: center;
+  }
+
+
+  .mission_container{
+    flex-wrap: wrap;
+  }
+
+  
+
+  .about_container {
+    flex-wrap: wrap;
+  }
+}
