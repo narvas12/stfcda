@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <title>Strategic Thinkers For Community Development Association</title>
+  <link rel="icon" href="https://tinypic.host/images/2023/11/09/photo_5927292221713923494_x.jpeg" >
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" >
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&family=Ubuntu:wght@300;400;500;700&display=swap");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      outline: none;
+      border: none;
+      text-decoration: none;
+      text-transform: capitalize;
+      list-style: none;
+    }
+
+    body {
+      font-family: "Chakra Petch", sans-serif;
+      
+      height: 100vh;
+    }
+.logo img{
+  height:80%;
+}
+    .container {
+      display: flex;
+      align-items: center;
+      justify-items: center;
+      flex-wrap: wrap;
+      padding: 30px 8%;
+
+      height: 100vh;
+      gap: 15px;
+      padding-bottom: 80px;
+    }
+
+    .container .content {
+      flex: 1 1 400px;
+    }
+
+    .container .content p {
+      padding: 10px 20px;
+      font-weight:100;
+
+    }
+
+    .container .image {
+      flex: 1 1 400px;
+    }
+
+    .container .logo img {
+      width: 100%;
+      height: 80%;
+    }
+
+    .container .image img {
+      width: 100%;
+    }
+
+    .container .content .title {
+      padding: 0 20px;
+    }
+
+    .container .content .title h3 {
+      font-size: 300%;
+      font-weight: 700;
+      color: green;
+    }
+
+    .container .content .count_down {
+      display: flex;
+      gap: 2rem;
+      padding: 20px;
+      flex-wrap: wrap;
+    }
+
+    .container .content .count_down .box {
+      padding: 10px 20px;
+      background: #fff;
+      border: 2px solid;
+      text-align: center;
+      flex: 1 1 20px;
+    }
+
+    .container .content .count_down .box h3 {
+      font-size: 40px;
+    }
+
+    .container .content .count_down .box span {
+      font-size: 18px;
+    }
+
+    ul {
+      display: flex;
+      padding: 20px;
+      justify-content: center;
+      align-items: center;
+      font-size: 40px;
+      color: rgb(16, 16, 16);
+    }
+
+    ul li a i {
+      transition: 300ms;
+      color: #000000;
+    }
+
+    ul li a i:hover {
+      color: green;
+    }
+    .footer2 {
+      display: block;
+    }
+
+    .footer1 {
+      display: none;
+    }
+    
+    @media screen and (max-width: 900px) {
+
+      .container {
+
+
+        min-height: 100vh;
+
+      }
+
+      .content {
+        padding: 10px;
+        text-align: center;
+      }
+
+      .container .content .count_down .box {
+        padding: 10px;
+      }
+
+      .container .content .title {
+        padding: 10px;
+      }
+
+      .container .content .count_down {
+        padding: 10px;
+      }
+
+      .container .content p {
+        padding: 10px;
+
+      }
+
+      .container .content .title h3 {
+        font-size: 200%;
+        font-weight: 700;
+        color: green;
+      }
+
+      .container .logo img {
+        border-radius: 2rem;
+        background: #fff;
+      }
+
+      .footer1 {
+        display: block;
+      }
+
+      .footer2 {
+        display: none;
+      }
+
+    }
+
+    footer {
+      text-align: center;
+      padding-bottom: 20px;
+      margin: 0 auto;
+    }
+
+    
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="content">
+      <div class="logo">
+        <img src="logo.png" alt="" />
+      </div>
+      <div class="title">
+        <h3>We're Coming Soon</h3>
+      </div>
+
+      <p>
+        The Strategic Thinker for Community Development Association (STFCDA) is a Non-Governmental Organization (NGO) Dedicated to Advancing Leadership, Strategic Thinking, and Sustainable Development across the African Continent.
+
+Founded With a Vision to Create a Thriving Community of Innovative Leaders and Decision-Makers, STFCDA is Fast Becoming a Force to Reckon with in Shaping the Future of Leadership and Development in Africa
+
+      </p>
+
+      <div class="count_down">
+        <div class="box">
+          <h3 id="days">00</h3>
+          <span>Day</span>
+        </div>
+        <div class="box">
+          <h3 id="hours">00</h3>
+          <span>Hour</span>
+        </div>
+        <div class="box">
+          <h3 id="minutes">00</h3>
+          <span>Minute</span>
+        </div>
+        <div class="box">
+          <h3 id="seconds">00</h3>
+          <span>Seconds</span>
+        </div>
+      </div>
+      <div class="socials">
+        <ul>
+          <li>
+            <a href="https://www.facebook.com/profile.php?id=61552780067198&mibextid=ZbWKwL" target="_blank"><i
+                class="bx bxl-facebook-square"></i></a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/stfcda_org" target="_blank"><i class="bx bxl-instagram-alt"></i></a>
+          </li>
+          <li>
+            <a href="https://x.com/stfcda_org"><i class="bx bxl-twitter" target="_blank"></i></a>
+          </li>
+
+          <li>
+            <a href="https://wa.me/7069598738" target="_blank"><i class='bx bxl-whatsapp-square'></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="image">
+      <img src="./Creative team-bro.svg" alt="" />
+    </div>
+    <footer class="footer1">
+      <small>Copyright &copy; Strategic Thinkers For Community Development
+        Association 2023</small>
+    </footer>
+
+  </div>
+
+  <footer class="footer2">
+    <small>Copyright &copy; Strategic Thinkers For Community Development
+      Association 2023</small>
+  </footer>
+
+  <script>
+    function countdown() {
+      const targetDate = new Date("2023-12-1 00:00:00").getTime();
+
+      function updateCountdown() {
+        const currentDate = new Date().getTime();
+        const timeLeft = targetDate - currentDate;
+
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        document.getElementById("days").textContent = formatTime(days);
+        document.getElementById("hours").textContent = formatTime(hours);
+        document.getElementById("minutes").textContent = formatTime(minutes);
+        document.getElementById("seconds").textContent = formatTime(seconds);
+
+        if (timeLeft <= 0) {
+          clearInterval(interval);
+        }
+      }
+
+      function formatTime(time) {
+        return time < 10 ? `0${time}` : time;
+      }
+
+      updateCountdown();
+      const interval = setInterval(updateCountdown, 1000);
+    }
+
+    countdown();
+
+  </script>
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</body>
+
+</html>
