@@ -1,201 +1,250 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Strategic Thinkers For Community Development Association</title>
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="icon" href="./logo.png" />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-  </head>
+{% extends 'base.html' %}
+{% load static %}
 
-  <body>
-    <header class="header">
-      <div class="logo">
-        <a href="">
-          <img src="/logo.png" alt="" />
-        </a>
-      </div>
 
-      <div class="hamburger">
-        <li class="cta_nav1">
-          <a class="cta" href="">Donate Now</a>
-        </li>
-        <div class="mobile">
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
+{% block content %}
+
+  <section class="hero">
+    <div class="container hero_container">
+      <div class="hero_content">
+        <div class="hero_title">
+          <h1 id="typed-text">
+            Strategic Thinkers For Community Development Association (STFCDA)
+          </h1>
+        </div>
+
+        <p>
+          We seek to continue addressing pressing societal issues from
+          leadership perspective through our journal, as well as keep up with
+          carrying out community developmental services.
+        </p>
+
+        <div class="hero_cta">
+          <a class="cta" href="">Donate Now <i class="bx bx-right-arrow-alt"></i></a>
         </div>
       </div>
+    </div>
+  </section>
 
-      <nav class="nav_bar">
-        <ul>
-          <li>
-            <a href="">Home</a>
-          </li>
-          <li>
-            <a href="">Who We are</a>
-          </li>
-          <li>
-            <a href="">Our Projects</a>
-          </li>
-          <li>
-            <a href="">Journal (AJLSD)</a>
-          </li>
-          <li>
-            <a href="">Contact Us</a>
-          </li>
-          <li>
-            <a id="loadButton" class="cta cta_nav2" href="">Donate Now</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
 
-    <section class="hero">
-      <div class="container hero_container">
-        <div class="hero_content">
-          <div class="hero_title">
-            <h1 id="typed-text">
-              African Centre for Leadership, Strategy & Development NGO
-              Publisher
-            </h1>
-          </div>
+  <div class="container detail_container content">
+    <div id="" class="detail_images ">
+      <img class="detail_images1" src="https://tinypic.host/images/2023/11/08/photo_5931429615249769945_y.jpeg"
+        alt="images of the association">
 
+      <img class="detail_images2" src="https://tinypic.host/images/2023/11/08/photo_5931429615249769949_y.jpeg"
+        alt="images of the association">
+      <img class="detail_images3" src="https://tinypic.host/images/2023/11/08/photo_5931429615249769943_y.jpeg"
+        alt="images of the association">
+      <img class="detail_images4" src="https://tinypic.host/images/2023/11/08/photo_5931429615249769944_y.jpeg"
+        alt="images of the association">
+    </div>
+
+    <div class="">
+      <h4>About Us</h4>
+      <div class="detail_title">
+        <h1>Strategic Thinkers For Community Development Association (STFCDA)</h1>
+      </div>
+      <p>
+        The (STFCDA) is a non-governmental organization (NGO)
+        dedicated to advancing leadership, strategic thinking, and sustainable development across the African continent.
+        Founded with a vision to empower African leaders and decision-makers, ACLSD has become a recognized force in
+        shaping the future of leadership and development in Africa
+      </p>
+
+    </div>
+    <a class="cta" href="">Learn More about Us!</i></a>
+  </div>
+  
+  <!-- main section  -->
+  <!-- Featured Project Section -->
+  <section id="how_we_work">
+
+    <div class="title">
+      <h2>HOW WE WORK</h2>
+      <p>
+        As a non-profit leadership association, we are dedicated to lending
+        help to communities struggling with environmental challenges through
+        various community development strategies
+      </p>
+    </div>
+
+    <div class="container how_we_work_container">
+      <div class="content">
+        <h3>Environmental Stewardship</h3>
+        <p>
+          <i class="bx bxs-tree"></i>evacuation of illegal dump sites,
+          orientation on proper waste disposal methods, establishment of
+          standard waste disposal facilities and planting of flowers/trees.
+        </p>
+      </div>
+
+      <div class="content">
+        <h3>Leadership in Action</h3>
+        <p>
+          <i class="bx bxs-universal-access"></i>We also address current or
+          emerging societal challenges in Africa from leadership perspective
+          through an annual publication of African Journal of Leadership,
+          Strategy and Development (AJLSD)
+        </p>
+      </div>
+      <div class="content">
+        <h3>Guiding Principles</h3>
+        <p>
+          <i class="bx bx-wind"></i>We are guided by the principle of love,
+          equity and compassion towards fellow humans, animals and the
+          environment (flora and fauna). Thereby, playing our part to achieve
+          United Nations' Sustainable Development Goal 13
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="content" id="how_we_work">
+
+    <div class="title">
+
+      <div class="circles">
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+        <div class="circle circle3"></div>
+        <div class="circle circle4"></div>
+      </div>
+
+      <h2>Community Engagement</h2>
+
+
+
+    </div>
+
+    <div class="container com_eng">
+      <div class="com_eng_img">
+        <img class="slide-in com_eng_img1" img src="https://tinypic.host/images/2023/11/08/photo_5931429615249769952_y.jpeg
+        " alt="comunity Engagement" />
+        <img class="slide-in1 com_eng_img2" src="https://tinypic.host/images/2023/11/08/photo_5931429615249769948_y.jpeg
+        " alt="" />
+      </div>
+
+      <div class="items">
+        <p>
+          As a non-profit leadership association, we are dedicated to lending
+          help to communities struggling with environmental challenges through
+          various community development strategies
+        </p>
+        <div class="">
           <p>
-            We seek to continue addressing pressing societal issues from
-            leadership perspective through our journal, as well as keep up with
-            carrying out community developmental services.
+            For our environmental projects, we partner with environmental
+            agencies, regulatory bodies, recycling organizations, medical
+            outfits, law enforcement agencies, relevant stakeholders,
+            community heads and dwellers.
           </p>
+        </div>
 
-          <div class="hero_cta">
-            <a class="cta" href=""
-              >Donate Now <i class="bx bx-right-arrow-alt"></i
-            ></a>
-          </div>
+        <div class="">
+          <p>
+            Joining force with these bodies gives us the leverage to do more
+            with less. It ensure wider spread of the consciousness to “take
+            urgent action to combat climate change and its impacts
+          </p>
+        </div>
+
+        <div class="">
+          <p>
+            To publish AJLSD, we call for papers from emerging leaders,
+            prolific leaders, social commentators and reputable leadership
+            organizations. The journal is then made available in hard copies
+            and e-book format
+          </p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- main section  -->
-    <!-- Featured Project Section -->
-    <section id="featured-project">
-      <div class="container featured_projects_container">
-        <h2>Featured Project: [Project Name]</h2>
-        <!-- Add images, success stories, key statistics, etc. -->
+  <!-- Featured Project Section -->
+  <section id="join_us">
+    <div class="title">
+      <h2>Join Us - Get Involved!!</h2>
+      
+    </div>
+    <div class="container join_us_container">
+
+      
+      <img src="https://tinypic.host/images/2023/11/08/photo_5931429615249769954_y.jpeg
+        " alt="join us">
+      
+      <div class="content">
         <p>
-          Provide a snapshot of a current or impactful project. Showcase the
-          tangible outcomes of your work.
+          Periodically, we undertake projects as the need arises. Volunteers
+          will be required as indicated in the publicity materials. We would
+          love to have you join hands with us. Together, we can!
+        </p>
+        <br>
+        <p>
+          We would also enjoy reading your thoughts on issues for discuss on any
+          edition of AJLSD. In same vein, we would love you to engage us on our
+          social media platforms.
+        </p>
+
+        <br>
+        <p>
+          If you have the capacity to, we would be honoured to receive your
+          donations. <br>
+          <span class="big_text">Together, we can!</span>
         </p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Why [Organization Name] Exists Section -->
-    <section id="why_us">
-      <div class="container why_us">
-        <h2>Why [Organization Name] Exists?</h2>
-        <!-- Add compelling visuals and concise text -->
-        <p>
-          Highlight what sets your organization apart. This could be a unique
-          approach, innovative solutions, or a track record of successful
-          initiatives.
-        </p>
-      </div>
-    </section>
 
-    <!-- Our Mission Section -->
-    <section id="our-mission">
-      <div class="container our_mission">
-        <h2>Our Mission</h2>
+  <!-- Our Mission Section -->
+  <section class="content" id="our-mission">
+    <div class="container mission_vision_container">
+      <div class="our_mission">
+        <h2>
+          <div class="thin_line"></div>Our Vision <div class="thin_line"></div>
+        </h2>
         <!-- Add concise statement of your organization's mission -->
         <p>
-          Concisely state your organization's mission, emphasizing the positive
-          change you aim to achieve. Use compelling language to capture the
-          essence of your purpose.
+          At STFCDA, Our vision is to create a thriving community of innovative leaders
         </p>
       </div>
-    </section>
 
-    <!-- Upcoming Events Section -->
-    <section id="upcoming-events">
-      <div class="container upcoming_events_container">
-        <h2>Upcoming Events</h2>
-        <!-- Add information about upcoming events, conferences, or activities -->
+
+      <div class="our_vision">
+        <h2>
+          <div class="thin_line"></div>Our Mission <div class="thin_line"></div>
+        </h2>
         <p>
-          Promote any upcoming events, conferences, or activities hosted or
-          endorsed by your organization. Provide dates, brief descriptions, and
-          registration details.
+          The mission of STFCDA is to foster lifelong connections among members, empowering them to collectively advance
+          their personal and professional growth while lending their voice for solutions to societal challenges as well
+          as contribute their quota towards combating climate change and its impacts
         </p>
       </div>
-      
-    </section>
+    </div>
+  </section>
 
-    <!-- main section  -->
-    <footer class="footer">
-      <div class="footer-left col-md-4 col-sm-6">
-        <p class="about">
-          <span>STFCDA</span>Strategic Thinkers For Community Development
-          Association | Set 18 of African Centre for Leadership, Strategy &
-          Development NGO Publisher, African Journal of Leadership, Strategy &
-          Development
-        </p>
-        <div class="icons">
-          <a
-            href="https://www.facebook.com/profile.php?id=61552780067198&mibextid=ZbWKwL"
-            target="_blank"
-            ><i class="bx bxl-facebook-square"></i
-          ></a>
 
-          <a href="https://www.instagram.com/stfcda_org" target="_blank"
-            ><i class="bx bxl-instagram-alt"></i
-          ></a>
+  <!-- Upcoming Events Section -->
+  <section id="upcoming-events">
+    <div class="container upcoming_events_container">
+      <h2>Upcoming Events</h2>
+      <div class="events">
 
-          <a href="https://x.com/stfcda_org"
-            ><i class="bx bxl-twitter" target="_blank"></i
-          ></a>
-
-          <a href="https://wa.me/7069598738" target="_blank"
-            ><i class="bx bxl-whatsapp-square"></i
-          ></a>
-        </div>
-      </div>
-      <div class="footer-center col-md-4 col-sm-6">
-        <div>
+        {% for event in events %}
+        <div class="card">
+          <div class="circle-container">
+            <img src="{{event.image_url}}" alt="avatar">
+          </div>
+          <h4>{{event.title}}</h4>
+          <br>
           <p>
-            <span>Contact Info</span> <i class="bx bxs-location-plus"></i> City,
-            Country
+            {{event.description}}
           </p>
         </div>
-        <div>
-          <i class="bx bxs-phone"></i>
-          <p>+23470 6959 8738</p>
-        </div>
-        <div>
-          <i class="bx bxs-envelope"></i>
-          <p><a href="#"> organisers@stfcda.org</a></p>
-        </div>
+        {% endfor %}
       </div>
-      <div class="footer-right col-md-4 col-sm-6">
-        <!-- <h2> Company<span> logo</span></h2> -->
-        <img src="/logo.png" alt="" />
+    </div>
+  </section>
 
-        <p class="menu">
-          <a href="#"> Home</a>
-          <a href="#"> Who We Are</a>
-          <a href="#"> Our Projects</a>
-          <a href="#"> Journal (AJLSD)</a>
-          <a href="#"> Contact</a>
-        </p>
-        <p class="name">
-          Copyright &copy; Strategic Thinkers For Community Development
-          Association &copy; 2023
-        </p>
-      </div>
-    </footer>
 
-    <script src="./assets/js/main.js"></script>
-  </body>
-</html>
+  {% endblock content %}

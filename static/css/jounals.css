@@ -1,0 +1,74 @@
+
+.journal {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 700px;
+    gap: 1.5rem;
+    margin: 4rem auto;
+    position: relative;
+    
+}
+
+
+.journal img {
+    width: 100%;
+    box-shadow: 1px 1px 10px var(--color-secondary-light);
+    border: 7px solid var(--color-white);
+}
+
+.product_details{
+    padding: 20px;
+    box-shadow: 1px 1px 10px var(--color-secondary-light);
+
+}
+
+.journal .product_details h3,
+.journal .product_details .price {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+
+.journal .product_details .price {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+
+.journal .product_details button {
+    width: 40%;
+    padding: 10px;
+    font-size: 25px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    position: absolute;
+    bottom: 5%;
+    transition: background 0.3s ease;
+}
+
+.journal .product_details button:hover {
+    animation: bounce 0.5s ease;
+}
+
+@media screen and (max-width:700px) {
+    .journal {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+    }
+
+
+    .journal .product_details .price {
+        font-weight: 700;
+    }
+    .journal .product_details button {
+        
+        position: relative;
+        width: 100%;
+    }
+
+}
+
+

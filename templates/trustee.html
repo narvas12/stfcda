@@ -1,0 +1,33 @@
+{% extends 'base.html' %} {% load static %} {% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/trustee.css' %}" />
+{% endblock %} {% block content %}
+<div class="large_rectangle">
+  <h2>{{ trustee.full_name }}</h2>
+</div>
+
+<section class="container trustee">
+  <div class="content trustee_container">
+    <div class="trustee_img">
+      <img src="{{ trustee.image_url }}" alt="trustee name" />
+      <h4 class="name">{{ trustee.full_name }}</h4>
+      <h5 class="position"></h5>
+    </div>
+    <div class="trustee_details">
+      <p class="bio">{{ trustee.bio|safe }}</p>
+    </div>
+  </div>
+  <a style="color: var(--color-secondary)" href="{% url 'trustees_list' %}">
+    << Back to Trustees List</a>
+</section>
+
+<style>
+  
+.large_rectangle {
+  height: 100px;
+  background: linear-gradient(to right, rgb(200, 0, 50), rgb(39, 204, 39)); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>
+{% endblock %}

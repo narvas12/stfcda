@@ -1,0 +1,185 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/members.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <section id="team">
+        <div class="team_container">
+            <div class="section_title">
+                <h2>Members Of STFCDA</h2>
+            </div>
+
+            <div class="content members">
+                <div class="circles">
+                    <div class="circle circle1"></div>
+                    <div class="circle circle2"></div>
+                    <div class="circle circle3"></div>
+                    <div class="circle circle4"></div>
+                </div>
+
+                <div class="others">
+                    {% for member in members %}
+                        <div class="card">
+                            <div class="circle-container">
+                                <img src="{{ member.image_url }}" alt="{{ member.full_name }} avatar" />
+                            </div>
+                            <h4>{{ member.full_name }}</h4>
+                            <h5>{{ member.title }}</h5>
+                            
+
+                          
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+      .members {
+        margin-top: 3rem;
+      }
+    
+      .members .executives,
+      .others {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        width: 100%;
+      }
+    
+      .members .card {
+        position: relative;
+        text-align: center;
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 1rem;
+        box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.144);
+        transition: var(--transition);
+        overflow: hidden;
+      }
+    
+      .members .card:hover {
+        box-shadow: 1px 1px 1px 20px transparent;
+      }
+    
+      .members .card .circle-container {
+        margin: 0 auto;
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+      }
+    
+      .members .card .circle-container img {
+        border-radius: 1rem;
+        width: 100%;
+        height: 100%;
+        display: block;
+        margin-bottom: 1rem;
+      }
+    
+      .members .overlay {
+        position: absolute;
+        bottom: -100%;
+        /* Initially hide the overlay below the card */
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background: var(--color-secondary);
+        padding-top: 20px;
+        transition: bottom 0.3s ease-in-out;
+        /* Smooth transition effect */
+        z-index: 5;
+      }
+    
+      .members .overlay i {
+        font-size: 35px;
+        transition: var(--transition);
+        color: var(--color-secondary);
+      }
+    
+      .overlay .trustee_name {
+        font-size: 20px;
+        font-weight: 700;
+      }
+    
+      .overlay .icons{
+        margin-top: 1rem;
+      }
+    
+    
+      .members .card h4,
+      .card h5 {
+        margin-bottom: 0.5rem;
+        color: var(--color-secondary);
+      }
+    
+      .members .card:hover .overlay {
+        bottom: 0;
+        /* Display the overlay on hover */
+      }
+    
+      .overlay a h4,
+      .overlay h5 {
+        color: var(--color-white);
+      }
+    
+    
+    
+      @media screen and (max-width: 1000px) {
+        
+        .members .others {
+         
+          grid-template-columns: repeat(2, 1fr);
+          
+        }
+      }
+    
+    
+      @media screen and (max-width: 700px) {
+       
+        .members .others {
+         
+          grid-template-columns: repeat(1, 1fr);
+          
+        }
+      }
+    
+    
+    
+      .learn_more {
+        background: var(--color-danger);
+        padding: 0.5rem 1rem;
+        margin-top: 1rem;
+      }
+    
+      .learn_more:hover {
+        scale: 0;
+      }
+    
+      @media screen and (max-width: 700px) {
+        .members .executives,
+        .members.others {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+        }
+      }
+    
+      .members .icons a:hover {
+        /* scale: 1.5; */
+        padding: 1.2rem 0.4rem 0.4rem 0.4rem;
+      }
+    
+      .members .icons a i {
+        font-size: 25px;
+        color: var(--color-white);
+      }
+    
+      .members .icons a i:hover {
+        scale: 1.5;
+      }
+    </style>
+{% endblock %}

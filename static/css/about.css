@@ -1,43 +1,220 @@
+.section_title{
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  margin: 2rem auto;
+}
+
+.section_title h1{
+  font-size: medium;
+  text-align:center;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+
+}
+
+
 .about img {
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.mission_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+
+.mission {
+  margin-top: 6rem;
+  width: var(--container-width-lg);
+  margin: 06rem auto;
+}
+
+
+
+.read-more {
+  display: none;
+}
+
+
+.expanded .read-more {
+  display: block;
+}
+
+
+.right {
+  position: relative;
+  /* Required for absolute positioning */
+}
+
+
+.slide-in {
+  position: absolute;
+  opacity: 0;
+  /* Initially invisible */
+  transform: translateX(100%);
+  /* Initially outside the viewport */
+  animation: slideIn 1s forwards;
+  /* Animation duration and fill-mode */
+}
+
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    /* Make the image visible */
+    transform: translateX(0);
+    /* Move the image to its original position */
+  }
+}
+
+
+.left h3,
+.right h3 {
+  margin-top: 3rem;
+}
+
+
+
+.members {
+  margin-top: 3rem
+}
+
+.executives,
+.others {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   width: 100%;
 }
 
-.about_container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+
+
+
+.card {
+  position: relative;
+  text-align: center;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.144);
+  transition: var(--transition);
+  overflow: hidden;
 }
 
-/* .mission_container .left img {
-  width: 50%;
-  
-} */
 
-.left{
- flex: 1 1 400px;
+.card:hover {
+ box-shadow:1px 1px 1px 20px transparent;
 }
+
+
+
+.card .circle-container {
+  margin: 0 auto;
+  width: 200px;
+  overflow: hidden;
+}
+
+
+
+.card .circle-container img {
+  border-radius: 50%;
+  width: 100%;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+
+
+.overlay {
+  position: absolute;
+  bottom: -100%; /* Initially hide the overlay below the card */
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: var(--color-secondary);
+  padding-top: 40px;
+  transition: bottom 0.3s ease-in-out; /* Smooth transition effect */
+  z-index: 5;
+}
+
+.overlay i{
+  font-size: 35px;
+  transition: var(--transition);
+  color: var(--color-secondary);
+}
+
+.overlay i:hover{
+  color: var(--color-secondary);
+}
+
+.card h4,
+.card h5{
+  margin-bottom: 0.5rem;
+  color: var(--color-white);
+}
+
+.card:hover .overlay {
+  bottom: 0; /* Display the overlay on hover */
+}
+
 
 @media screen and (max-width: 1000px) {
-  .about_container{
-    display: flex;
-    align-items: center;
-  }
-
-
-  .mission_container{
-    display: flex;
-    align-items: center;
-    align-items: center;
-  }
-
-
-  .mission_container{
-    flex-wrap: wrap;
-  }
-
-  
-
   .about_container {
+    display: flex;
+    align-items: center;
     flex-wrap: wrap;
   }
+
+
+  .mission_container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+
+  .executives,
+  .others {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+
+
+
+}
+
+
+
+@media screen and (max-width: 700px) {
+
+  .executives,
+  .others {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+}
+
+
+.members .icons a:hover{
+  /* scale: 1.5; */
+  padding: 1.2rem 0.4rem 0.4rem 0.4rem;
+}
+
+.members .icons a i{
+  font-size: 25px;
+  color: var(--color-white);
+}
+
+.members .icons a i:hover{
+  scale: 1.5;
 }

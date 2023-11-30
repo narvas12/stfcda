@@ -1,0 +1,126 @@
+.members {
+  margin-top: 3rem
+}
+
+.members .executives,
+.others {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+}
+
+
+
+
+.members .card {
+  position: relative;
+  text-align: center;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.144);
+  transition: var(--transition);
+  overflow: hidden;
+}
+
+
+.members .card:hover {
+  box-shadow: 1px 1px 1px 20px transparent;
+}
+
+
+
+.members .card .circle-container {
+  margin: 0 auto;
+  width: 200px;
+  overflow: hidden;
+}
+
+
+
+.members .card .circle-container img {
+ 
+  width: 100%;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+
+
+.members .overlay {
+  position: absolute;
+  bottom: -100%;
+  /* Initially hide the overlay below the card */
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: var(--color-secondary);
+  padding-top: 40px;
+  transition: bottom 0.3s ease-in-out;
+  /* Smooth transition effect */
+  z-index: 5;
+}
+
+.members .overlay i {
+  font-size: 35px;
+  transition: var(--transition);
+  color: var(--color-secondary);
+}
+
+.members .overlay i:hover {
+  color: var(--color-secondary);
+}
+
+.members .card h4,
+.card h5 {
+  margin-bottom: 0.5rem;
+  color: var(--color-white);
+}
+
+.members .card:hover .overlay {
+  bottom: 0;
+  /* Display the overlay on hover */
+}
+
+
+@media screen and (max-width: 1000px) {
+ 
+  .members .executives,
+  .members .others {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+
+
+
+}
+
+
+
+@media screen and (max-width: 700px) {
+
+  .members .executives,
+  .members.others {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+}
+
+
+
+.members .icons a:hover {
+  /* scale: 1.5; */
+  padding: 1.2rem 0.4rem 0.4rem 0.4rem;
+}
+
+.members .icons a i {
+  font-size: 25px;
+  color: var(--color-white);
+}
+
+.members .icons a i:hover {
+  scale: 1.5;
+}
