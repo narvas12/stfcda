@@ -11,6 +11,7 @@ from django.core.mail import send_mail
 
 def home(request):
     events  =  Todos.objects.all()
+    
     return render(request, 'index.html', {'events': events})
 
 
