@@ -1,9 +1,14 @@
 # views.py in your journalapp
 
 from core import settings
-from django.shortcuts import redirect, render
-from django.views.generic import ListView  #, CreateView, UpdateView, DeleteView
-from .models import Contact, Journal, Members, Todos
+from django.shortcuts import get_object_or_404, redirect, render
+from django.views.generic import ListView
+from stfcda.form import JournalfilesForm, NominationForm
+
+from stfcda.form import NominationForm
+
+  #, CreateView, UpdateView, DeleteView
+from .models import Contact, Journal, Journalfiles, Members, Nomination, Todos
 from django.urls import reverse_lazy
 from django.contrib import messages
 from django.core.mail import send_mail
@@ -91,3 +96,60 @@ def view_trustee(request, slug):
     trustee = Members.objects.get(slug=slug)
     return render(request, 'trustee.html', {'trustee': trustee})
 
+
+
+
+
+def nominate_member(request):
+    if request.method == 'POST':
+        form = NominationForm(request.POST)
+        if form.is_valid():
+            nomination = form.save()
+
+            # Check if the person has already made a nomination
+            nominated_member = nomination.member
+           
+          
+            # Update is_nominated to True in the Members model
+            nominated_member.is_nominated = True
+            nominated_member.save()
+
+            # Send email notification
+            subject = 'New Nomination'
+            message = f'New nomination for {nominated_member.full_name}.\nReason: {nomination.n_reason}'
+            from_email = settings.DEFAULT_FROM_EMAIL
+            recipient_list = ['your@email.com']  
+
+            send_mail(subject, message, from_email, recipient_list)
+
+            # Display success message
+            messages.success(request, f'Your nomination for {nominated_member.full_name} was submitted successfully! \n Please Do not make another nomination Thank You')
+
+            # Reset the form for a new nomination
+            form = NominationForm()
+
+    else:
+        form = NominationForm()
+
+    return render(request, 'nominate.html', {'form': form})
+
+
+
+def upload_journal(request):
+    if request.method == 'POST':
+        form = JournalfilesForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'upload success')
+    else:
+        form = JournalfilesForm()
+    return render(request, 'upload_journal.html', {'form': form})
+
+
+
+def file_list(request):
+    files = Journalfiles.objects.all()
+    return render(request, 'files.html', {'files': files})
+
+def volunteer(request):
+    return render(request, volunteer.html)

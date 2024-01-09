@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>File List</h1>
+    <ul>
+        {% for file in files %}
+            <li>
+                <a href="{{ file.Journal.url }}" download="{{ file.Journal.name }}">
+                    {{ file.title }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

@@ -138,9 +138,8 @@ else:
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-
-MEDIA_URL = 'media/'
-MEDIA_ROOT = BASE_DIR / '/media/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -149,3 +148,4 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'devcaliban@gmail.com' # Replace with your Gmail address
 EMAIL_HOST_PASSWORD = 'tpatxaoryaiuzzrp' # Replace with your Gmail password or app password
 EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'devcaliban@gmail.com'

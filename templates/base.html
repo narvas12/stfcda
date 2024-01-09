@@ -17,6 +17,9 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
   </head>
 
   <style>
@@ -1049,14 +1052,7 @@
       }
     }
 
-    /* .events {
-  display: block;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  margin: 0 auto;
-  justify-content: center;
-} */
-
+ 
     #uniqueness {
       position: relative;
       height: 15vh;
@@ -1413,6 +1409,7 @@
             </li>
             <li><a href="{% url 'projects' %}">Our Projects</a></li>
             <li><a href="{% url 'journal_list' %}">Journal (AJLSD)</a></li>
+            <li><a href="{% url 'nominate_member' %}">Nominate</a></li>
             <li><a href="{% url 'contact_us' %}">Contact Us</a></li>
           </ul>
         </nav>
@@ -1499,9 +1496,10 @@
         <p class="menu">
           <a href="{% url 'home' %}">Home</a>
           <a href="{% url 'about_us' %}">About Us</a>
-          <a href="Projects">Our Projects</a>
-          <a href="#">Journal (AJLSD)</a>
-          <a href="#">Contact</a>
+          <a href="{% url 'projects' %}">Our Projects</a>
+          <a href="{% url 'journal_list' %}">Journal (AJLSD)</a>
+          <a href="#">Volunteer</a>
+          <a href="{% url 'contact_us' %}">Contact</a>
         </p>
         <div class="copyright">
           <p class="name">

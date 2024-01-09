@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Contact, Journal, Members, Todos
+from .models import Contact, Journal, Journalfiles, Members, Todos, Nomination
 
 
 @admin.register(Journal)
@@ -8,10 +8,15 @@ class JournalAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name',)}
 
 
+@admin.register(Nomination)
+class NominationAdmin(admin.ModelAdmin):
+    list_display = ['member', 'is_nominated', 'n_reason']
+
+
 
 @admin.register(Members)
 class MembersAdmin(admin.ModelAdmin):
-    list_display = ['full_name', 'title', 'is_active', 'is_trustee', 'is_member']
+    list_display = ['id','full_name', 'title', 'is_trustee', 'is_member', 'is_nominated']
     prepopulated_fields = {'slug': ('full_name',)}
 
 
@@ -22,4 +27,9 @@ class ContactAdmin(admin.ModelAdmin):
 
 @admin.register(Todos)
 class ContactAdmin(admin.ModelAdmin):
+    list_display = ['title']
+
+
+@admin.register(Journalfiles)
+class JournalfilesAdmin(admin.ModelAdmin):
     list_display = ['title']

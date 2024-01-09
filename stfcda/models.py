@@ -33,6 +33,8 @@ class Journal(models.Model):
         return self.name
 
 
+
+
 class Members(models.Model):
     id = models.AutoField(primary_key=True)
     full_name = models.CharField(max_length=120)
@@ -41,14 +43,14 @@ class Members(models.Model):
     fb = models.URLField(null=True, blank=True)
     lk = models.URLField(null=True, blank=True)
     x = models.URLField(null=True, blank=True)
-    image_url = models.URLField(null=True)
     bio = models.TextField()
 
     slug = models.SlugField(unique=True, blank=True)
     is_active = models.BooleanField(default=False)
     is_trustee = models.BooleanField(default=False)
     is_member = models.BooleanField(default=False)
-   
+    is_nominated = models.BooleanField(default=False)  # New field for nomination
+    is_executive = models.BooleanField(default=False)  # New field for marking elected members
 
     def save(self, *args, **kwargs):
         # Replace spaces with underscores in the name before creating the slug
@@ -57,6 +59,16 @@ class Members(models.Model):
 
     def __str__(self):
         return self.full_name
+    
+
+
+class Nomination(models.Model):
+    member = models.ForeignKey(Members, on_delete=models.CASCADE)
+    is_nominated = models.BooleanField(default=False)
+    n_reason = models.TextField()
+
+    def __str__(self):
+        return self.member.full_name  # Assuming 'name' is a field in the Members model
 
 
 
@@ -68,4 +80,11 @@ class Todos(models.Model):
     def __str__(self):
         return self.title
 
+    
+    
+class Journalfiles(models.Model):
+    Journal = models.FileField(upload_to='uploads/')
+    title = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.title
