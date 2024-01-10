@@ -2,25 +2,57 @@
 {% load static %}
 
 {% block content %}
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Upload Journal</button>
-</form>
-
-{% endblock content %}
-
-<style>
-    form{
-        height: 50vh;
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <div class="upload_journal">
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button id="reload" type="submit">Upload Journal</button>
+    </form>
+  </div>
+ 
+  <style>
+    .upload_journal form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 80%;
+      margin: 0 auto;
     }
-</style>
+    
+    .upload_journal label {
+      display: block;
+      margin-bottom: 8px;
+    }
+    
+    .upload_journal form input,
+    .upload_journal button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    
+    .upload_journal button {
+      background-color: #4caf50;
+      color: #fff;
+      cursor: pointer;
+    }
+    
+    .upload_journal button:hover {
+      background-color: #45a049;
+    }
+  </style>
+{% endblock %}

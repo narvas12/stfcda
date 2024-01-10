@@ -141,6 +141,7 @@ def upload_journal(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'upload success')
+            return redirect('upload_journal')
     else:
         form = JournalfilesForm()
     return render(request, 'upload_journal.html', {'form': form})

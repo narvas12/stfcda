@@ -1,3 +1,4 @@
+import os
 from django.db import models
 from django.utils.text import slugify
 import datetime
@@ -81,10 +82,17 @@ class Todos(models.Model):
         return self.title
 
     
-    
+
+
+
+def generate_file_path(instance, filename):
+    base_filename, file_extension = os.path.splitext(filename)
+    return f"{instance.title}_vol{instance.version}{file_extension}"
+
 class Journalfiles(models.Model):
-    Journal = models.FileField(upload_to='uploads/')
+    Journal = models.FileField(upload_to=generate_file_path)
     title = models.CharField(max_length=100)
+    version = models.IntegerField(default=1)
 
     def __str__(self):
         return self.title
