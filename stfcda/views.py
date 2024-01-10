@@ -147,6 +147,35 @@ def upload_journal(request):
     return render(request, 'upload_journal.html', {'form': form})
 
 
+def delete_journal(request, pk):
+    file_to_delete = get_object_or_404(Journalfiles, pk=pk)
+    
+    if request.method == 'POST':
+        file_to_delete.delete()
+        messages.success(request, 'File deleted successfully')
+        return redirect('file_list')
+    
+    return render(request, 'delete_journal.html', {'file': file_to_delete})
+
+
+def edit_journal(request, pk):
+    file_to_edit = get_object_or_404(Journalfiles, pk=pk)
+    
+    if request.method == 'POST':
+        form = JournalfilesForm(request.POST, request.FILES, instance=file_to_edit)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'File updated successfully')
+            return redirect('file_list')
+    else:
+        form = JournalfilesForm(instance=file_to_edit)
+    
+    return render(request, 'edit_journal.html', {'form': form, 'file': file_to_edit})
+
+
+
+
+
 
 def file_list(request):
     files = Journalfiles.objects.all()

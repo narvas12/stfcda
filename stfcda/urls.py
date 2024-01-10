@@ -1,6 +1,6 @@
 from django.urls import path
 # ournalCreateView, JournalUpdateView, JournalDeleteView
-from .views import JournalListView, active_members, contact, about, file_list, home, nominate_member, projects, trustees_list, upload_journal, view_trustee
+from .views import JournalListView, active_members, contact, about, file_list, home, nominate_member, projects, trustees_list, upload_journal, view_trustee, delete_journal, edit_journal
 
 
 from django.conf import settings
@@ -17,7 +17,9 @@ urlpatterns = [
     path('trustees/<slug:slug>/', view_trustee, name='view-trustee'),
     path('nominate/', nominate_member, name='nominate_member'),
     path('upload_journal/', upload_journal, name='upload_journal'),
-    path('file_list/', file_list, name='file_list')
+    path('file_list/', file_list, name='file_list'),
+    path('delete_journal/<int:pk>/', delete_journal, name='delete_journal'),
+    path('edit_journal/<int:pk>/', edit_journal, name='edit_journal'),
     # path('journals/create/', JournalCreateView.as_view(), name='journal-create'),
     # path('journals/<slug:slug>/update/', JournalUpdateView.as_view(), name='journal-update'),
     # path('journals/<slug:slug>/delete/', JournalDeleteView.as_view(), name='journal-delete'),

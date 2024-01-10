@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container delete_container">
+        <h1>Delete File</h1>
+        <p>Are you sure you want to delete the file "{{ file.title }}"?</p>
+        <form method="post" action="{% url 'delete_journal' file.id %}">
+            {% csrf_token %}
+            <button type="submit" class="delete-btn">Delete</button>
+            <a href="{% url 'file_list' %}" class="cancel-btn">Cancel</a>
+        </form>
+    </div>
+    <style>
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            margin-top: 12rem;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+       .delete_container h1 {
+            color: #333;
+        }
+
+       .delete_container p {
+            margin-bottom: 20px;
+        }
+
+      .delete_container  form {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .delete-btn {
+            background-color: #f44336;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .delete-btn:hover {
+            background-color: #d32f2f;
+        }
+
+        .cancel-btn {
+            background-color: #2196f3;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .cancel-btn:hover {
+            background-color: #1565c0;
+        }
+    </style>
+{% endblock content %}

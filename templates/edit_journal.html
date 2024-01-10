@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="container edit_container">
+    <h1>Edit File</h1>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="update-btn">Update</button>
+      <a href="{% url 'file_list' %}" class="cancel-btn">Cancel</a>
+    </form>
+  </div>
+  <style>
+    .container {
+      max-width: 400px;
+      margin: 50px auto;
+      margin-top: 12rem;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .edit_container h1 {
+      color: #333;
+    }
+    
+    .edit_container form {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .update-btn {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    
+    .update-btn:hover {
+      background-color: #45a049;
+    }
+    
+    .cancel-btn {
+      background-color: #2196f3;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    
+    .cancel-btn:hover {
+      background-color: #1565c0;
+    }
+    
+    .edit_container label {
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+    
+    .edit_container input,
+    select {
+      padding: 8px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+  </style>
+{% endblock %}
