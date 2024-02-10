@@ -89,6 +89,8 @@ def generate_file_path(instance, filename):
     base_filename, file_extension = os.path.splitext(filename)
     return f"{instance.title}_vol{instance.version}{file_extension}"
 
+
+
 class Journalfiles(models.Model):
     Journal = models.FileField(upload_to=generate_file_path)
     title = models.CharField(max_length=100)
@@ -96,3 +98,33 @@ class Journalfiles(models.Model):
 
     def __str__(self):
         return self.title
+    
+    
+
+
+class VolunteerApplication(models.Model):
+    POSITION_CHOICES = [
+        ('editor_in_chief', 'Editor-in-Chief'),
+        ('managing_editor', 'Managing Editor'),
+        ('section_editor', 'Section Editor'),
+        ('copy_editor', 'Copy Editor'),
+        ('peer_review_coordinator', 'Peer Review Coordinator'),
+        ('design_layout_editor', 'Design and Layout Editor'),
+        ('technical_editor', 'Technical Editor'),
+        ('publications_manager', 'Publications Manager'),
+        ('marketing_coordinator', 'Marketing Coordinator'),
+        ('advisory_board_member', 'Advisory Board Member'),
+    ]
+    first_name = models.CharField(max_length=255)
+    middle_name = models.CharField(max_length=255, blank=True, null=True)
+    surname = models.CharField(max_length=255)
+    phone_number = models.CharField(max_length=15)  # You can adjust the max length based on your needs
+    email = models.EmailField()
+    skills = models.TextField()
+    position = models.CharField(max_length=30, choices=POSITION_CHOICES)
+    why_volunteer = models.TextField()
+    fit_for_position = models.TextField()
+    resume = models.FileField(upload_to='resumes/')
+
+    def __str__(self):
+        return f"{self.first_name} {self.surname}"

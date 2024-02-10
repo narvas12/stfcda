@@ -1405,11 +1405,13 @@
                 <li><a href="{% url 'members' %}">Members</a></li>
                 <li><a href="{% url 'trustees_list' %}">Board of Trustees</a> </li>
                 <li><a href="https://stfcda.org:2096/" target="_blank">Email</a></li>
+                
               </ul>
             </li>
             <li><a href="{% url 'projects' %}">Our Projects</a></li>
             <li><a href="{% url 'journal_list' %}">Journal (AJLSD)</a></li>
             <li><a href="{% url 'nominate_member' %}">Nominate</a></li>
+            <li><a href="{% url 'volunteer' %}">Volunteer</a></li>
             <li><a href="{% url 'contact_us' %}">Contact Us</a></li>
           </ul>
         </nav>
@@ -1498,7 +1500,7 @@
           <a href="{% url 'about_us' %}">About Us</a>
           <a href="{% url 'projects' %}">Our Projects</a>
           <a href="{% url 'journal_list' %}">Journal (AJLSD)</a>
-          <a href="#">Volunteer</a>
+          <a href="{% url 'volunteer' %}">Volunteer</a>
           <a href="{% url 'contact_us' %}">Contact</a>
         </p>
         <div class="copyright">

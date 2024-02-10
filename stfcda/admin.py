@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Contact, Journal, Journalfiles, Members, Todos, Nomination
+from .models import Contact, Journal, Journalfiles, Members, Todos, Nomination, VolunteerApplication
 
 
 @admin.register(Journal)
@@ -33,3 +33,8 @@ class ContactAdmin(admin.ModelAdmin):
 @admin.register(Journalfiles)
 class JournalfilesAdmin(admin.ModelAdmin):
     list_display = ['title']
+    
+    
+@admin.register(VolunteerApplication)
+class VolunteerApplicationAdmin(admin.ModelAdmin):
+    list_display = ['surname', 'position']

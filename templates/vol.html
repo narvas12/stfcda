@@ -1,0 +1,192 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- https://tinypic.host/images/2023/11/23/stfcds_publication.jpeg -->
+<section class="container">
+  <div class="volunteer_container">
+    <article>
+      <img src="https://tinypic.host/images/2024/01/11/AJLSD-Editorial-Board-Call-for-Volunteers.png" alt="stfcds_publication" />
+
+      <h2>Call for Volunteers: African Journal for Leadership, Strategy, and Development (AJLSD)</h2>
+      <h2>AJLSD Editorial Board</h2>
+      <div class="details">
+        <p>
+          Strategic Thinkers for Community Development Association, the publisher of <em>African Journal for Leadership, Strategy, and Development</em>, is seeking passionate and qualified individuals to contribute to our esteemed publication. We invite you to join us in fostering impactful research and promoting knowledge in leadership and strategy. Below are the available positions:
+        </p>
+
+        <div class="role">
+          <h5>Editor-in-Chief</h5>
+          <p>Oversight of the entire editorial process.</p>
+          <p>Ensure the overall quality and coherence of content.</p>
+        </div>
+
+        <div class="role">
+          <h5>Managing Editor</h5>
+          <p>Coordination of day-to-day operations.</p>
+          <p>Management of deadlines and workflow of the editorial team.</p>
+        </div>
+
+        <div class="role">
+          <h5>Section Editors</h5>
+          <p>Assigned to specific content areas:</p>
+          <p>responsible for reviewing and editing articles within their designated topics.</p>
+        </div>
+
+        <div class="role">
+          <h5>Copy Editors</h5>
+          <p>Focus on grammar, style, and consistency, ensuring the overall polish of the journal's content.</p>
+        </div>
+
+        <div class="role">
+          <h5>Peer Review Coordinator</h5>
+          <p>Manages the peer review process,</p>
+          <p>liaising with reviewers and authors to ensure rigorous and fair evaluations.</p>
+        </div>
+
+        <div class="role">
+          <h5>Design and Layout Editor</h5>
+          <p>Responsible for the visual presentation of the journal,</p>
+          <p>including formatting, graphics, and overall design.</p>
+        </div>
+
+        <div class="role">
+          <h5>Technical Editor</h5>
+          <p>Ensures that the journal meets technical requirements, especially if it's an online publication.</p>
+          <p></p>
+        </div>
+
+        <div class="role">
+          <h5>Publications Manager</h5>
+          <p>Oversees the publication schedule, coordinates with printers or online platforms, and manages distribution.</p>
+        </div>
+
+        <div class="role">
+          <h5>Publications Manager</h5>
+          <p>Oversees the publication schedule, coordinates with printers or online platforms, and manages distribution.</p>
+          <p></p>
+        </div>
+
+        <div class="role">
+          <h5>Marketing Coordinator</h5>
+          <p>Promotes the journal, engages with the audience, and explores opportunities for collaboration and partnerships.</p>
+          <p></p>
+        </div>
+
+        <div class="role">
+          <h5>Advisory Board Members</h5>
+          <p>Experienced individuals in the field who provide guidance and strategic input to the editorial board.</p>
+          <p></p>
+        </div>
+        <br />
+
+        <!-- Repeat the pattern for the other positions -->
+
+        <h4>Benefits of Volunteering for AJLSD:</h4>
+        <ul>
+          <li>Serve an international community through impactful research publication.</li>
+          <li>Network and connect with professionals in the literary and leadership industry.</li>
+          <li>Pursue your passion and contribute to a noble cause.</li>
+          <li>Enhance your resume with valuable experience.</li>
+          <li>Use and develop your skills in a meaningful context.</li>
+        </ul>
+
+        <h3>Other Perks Include:</h3>
+        <div class="role">
+          <ul>
+            <li>Training and skills development.</li>
+            <li>Job recommendations.</li>
+            <li>Mentorship programs.</li>
+            <li>Leadership roles.</li>
+          </ul>
+        </div>
+        <div class="role">
+          <p>
+            <strong>To Apply:</strong> Interested individuals should submit their resume and a brief statement of interest to <a href="mailto:volunteer@stfcda.com">volunteer@stfcda.com</a> by [deadline]. Please specify the position you are applying for in the subject line.
+          </p>
+        </div>
+        <p>We look forward to welcoming dedicated individuals to our AJLSD family, committed to advancing knowledge and fostering excellence in leadership and strategy.</p>
+      </div>
+
+     <a href="{% url 'volunteer_application' %}"> <div class="cta">Volunteer Now</div></a>
+    </article>
+
+    <!--  <article>
+                <img src="https://tinypic.host/images/2023/11/23/stfcda_dump_evac.jpeg" alt="stfcda_dump_evacuation">
+                <h3>Dumpsite Evacuation</h3>
+            </article>
+
+            <article>
+                <img src="https://tinypic.host/images/2023/11/23/stfcda_alsa.jpeg" alt="stfcda_alsa">
+                <h3>ALSA LOC</h3>
+            </article>  -->
+  </div>
+</section>
+<style>
+
+    article .cta{
+        font-size: 17px;
+        font-weight: 500;
+        margin-top: 2rem;
+    }
+
+    article a{
+        color: var(--color-danger);
+    }
+    .volunteer_container {
+      /* display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 3rem; */
+      text-align: center;
+      width: 70%;
+      margin: auto;
+    }
+    
+    .volunteer_container article {
+      box-shadow: 1px 1px 10px rgb(221, 221, 221);
+      padding: 1rem;
+      border-radius: 1rem;
+      background-color: #fff;
+    }
+    
+    .volunteer_container article .role {
+      margin-bottom: 2rem;
+    }
+    .volunteer_container p {
+      color: #363636;
+    }
+    
+    .volunteer_container article img {
+      border: 15px solid var(--color-white);
+      margin-bottom: 2rem;
+    }
+    
+    .volunteer_container article h3,
+    .volunteer_container article h4 {
+      border: 5px solid var(--color-white);
+      margin-top: 1rem;
+    }
+    article h5 {
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+    
+    @media only screen and (max-width: 1080px) {
+      .volunteer_container {
+        width: 80%;
+      }
+    }
+    
+    @media only screen and (max-width: 767px) {
+      .volunteer_container {
+        width: 98%;
+      }
+    
+      .volunteer_container article h3,
+      .volunteer_container article h4 {
+        text-align: center;
+      }
+    }
+  </style>
+  
+{% endblock content %}

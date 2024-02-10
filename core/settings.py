@@ -143,9 +143,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'devcaliban@gmail.com' # Replace with your Gmail address
-EMAIL_HOST_PASSWORD = 'tpatxaoryaiuzzrp' # Replace with your Gmail password or app password
-EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'devcaliban@gmail.com'
+EMAIL_HOST = 'mail.stfcda.org'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'volunteer@stfcda.org' # Replace with your Gmail address
+EMAIL_HOST_PASSWORD = 'P@sword.123' # Replace with your Gmail password or app password
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+DEFAULT_FROM_EMAIL = 'volunteer@stfcda.org'

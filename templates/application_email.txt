@@ -1,0 +1,13 @@
+A new volunteer application has been submitted.
+
+Details:
+
+First Name: {{ application.first_name }}
+Middle Name: {{ application.middle_name }}
+Surname: {{ application.surname }}
+Phone Number: {{ application.phone_number }}
+Email: {{ application.email }}
+Skills: {{ application.skills }}
+Position: {{ application.get_position_display }}
+Why Volunteer: {{ application.why_volunteer }}
+Fit for Position: {{ application.fit_for_position }}
